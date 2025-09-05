@@ -24,9 +24,21 @@ jobs:
       - name: Run accessibility tests
         run: npm run test:all
 
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://www.e-konkursy.info/
+            https://www.e-konkursy.info/konkursy
+          budgetPath: ./budget.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
       - name: Upload accessibility report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: e-Konkursy-accessibility
-          path: cypress/reports/a11y
+          path: |
+            cypress/reports/a11y
+            reports/lighthouse
