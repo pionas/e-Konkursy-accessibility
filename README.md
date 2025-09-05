@@ -110,19 +110,20 @@ npm run test:lighthouse
 <!-- LIGHTHOUSE TABLE START -->
 | URL | Accessibility | Performance |
 | --- | --- | --- |
-| https://www.e-konkursy.info/ | 100 | 82 |
+| https://www.e-konkursy.info/ | 100 | 95 |
 | https://www.e-konkursy.info/rejestracja | 95 | 100 |
-| https://www.e-konkursy.info/kontakt | 95 | 100 |
-| https://www.e-konkursy.info/konkursy | 96 | 99 |
-| https://www.e-konkursy.info/konkursy/konkursy-aktualne | 91 | 93 |
+| https://www.e-konkursy.info/kontakt | 95 | 99 |
+| https://www.e-konkursy.info/konkursy | 96 | 94 |
+| https://www.e-konkursy.info/konkursy/konkursy-aktualne | 91 | 96 |
 | https://www.e-konkursy.info/konkursy-dzisiaj-dodane | 100 | 100 |
-| https://www.e-konkursy.info/forum/inne/zbieramy-kase | 96 | 89 |
+| https://www.e-konkursy.info/forum/inne/zbieramy-kase | 96 | 99 |
 | https://www.e-konkursy.info/forum | 91 | 100 |
-| https://www.e-konkursy.info/uzytkownicy/pionas | 92 | 100 |
+| https://www.e-konkursy.info/uzytkownicy/pionas | 92 | 98 |
 | https://www.e-konkursy.info/mapa-strony | 96 | 100 |
-| https://www.e-konkursy.info/statystyki | 100 | 100 |
+| https://www.e-konkursy.info/statystyki | 100 | 95 |
 | https://www.e-konkursy.info/aktualnosci | 96 | 96 |
 <!-- LIGHTHOUSE TABLE END -->
+
 
 
 > Tabela jest automatycznie aktualizowana przy każdym uruchomieniu `npm run test:lighthouse`.
