@@ -110,19 +110,20 @@ npm run test:lighthouse
 <!-- LIGHTHOUSE TABLE START -->
 | URL | Accessibility | Performance |
 | --- | --- | --- |
-| https://www.e-konkursy.info/ | 100 | 81 |
-| https://www.e-konkursy.info/rejestracja | 95 | 96 |
-| https://www.e-konkursy.info/kontakt | 95 | 97 |
-| https://www.e-konkursy.info/konkursy | 96 | 90 |
-| https://www.e-konkursy.info/konkursy/konkursy-aktualne | 91 | 84 |
-| https://www.e-konkursy.info/konkursy-dzisiaj-dodane | 100 | 96 |
+| https://www.e-konkursy.info/ | 100 | 82 |
+| https://www.e-konkursy.info/rejestracja | 95 | 95 |
+| https://www.e-konkursy.info/kontakt | 95 | 99 |
+| https://www.e-konkursy.info/konkursy | 96 | 94 |
+| https://www.e-konkursy.info/konkursy/konkursy-aktualne | 91 | 99 |
+| https://www.e-konkursy.info/konkursy-dzisiaj-dodane | 100 | 99 |
 | https://www.e-konkursy.info/forum/inne/zbieramy-kase | 96 | 94 |
-| https://www.e-konkursy.info/forum | 91 | 98 |
-| https://www.e-konkursy.info/uzytkownicy/pionas | 92 | 99 |
-| https://www.e-konkursy.info/mapa-strony | 96 | 100 |
-| https://www.e-konkursy.info/statystyki | 100 | 100 |
-| https://www.e-konkursy.info/aktualnosci | 96 | 88 |
+| https://www.e-konkursy.info/forum | 91 | 99 |
+| https://www.e-konkursy.info/uzytkownicy/pionas | 92 | 97 |
+| https://www.e-konkursy.info/mapa-strony | 96 | 98 |
+| https://www.e-konkursy.info/statystyki | 100 | 94 |
+| https://www.e-konkursy.info/aktualnosci | 96 | 84 |
 <!-- LIGHTHOUSE TABLE END -->
+
 
 
 
