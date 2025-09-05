@@ -16,8 +16,9 @@
     "test:edge:desktop": "cypress run --browser edge --config viewportWidth=1920,viewportHeight=1080",
     "test:edge:tablet": "cypress run --browser edge --config viewportWidth=768,viewportHeight=1024",
     "test:edge:mobile": "cypress run --browser edge --config viewportWidth=375,viewportHeight=667",
-    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge",
-    "test:open": "cypress open"
+    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge && npm run test:lighthouse",
+    "test:open": "cypress open",
+    "test:lighthouse": "node run-lighthouse.js"
   },
   "keywords": [
     "cypress",
@@ -32,7 +33,9 @@
   "license": "MIT",
   "devDependencies": {
     "axe-core": "^4.10.3",
+    "chrome-launcher": "^1.2.0",
     "cypress": "^15.1.0",
-    "cypress-axe": "^1.7.0"
+    "cypress-axe": "^1.7.0",
+    "lighthouse": "^12.8.2"
   }
 }
