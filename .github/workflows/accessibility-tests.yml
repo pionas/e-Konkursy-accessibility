@@ -27,11 +27,9 @@ jobs:
         run: npm run test:all
 
       - name: Audit URLs using Lighthouse
-        if: always()
         run: npm run test:lighthouse
 
       - name: Upload accessibility report
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: e-Konkursy-accessibility
@@ -41,9 +39,7 @@ jobs:
             wyniki
 
       - uses: EndBug/add-and-commit@v9
-        if: always()
         with:
-          add: |
-            ./cypress/screenshots
-            ./README.md
-          message: 'Update README.md and screenshots'
+          add: ./README.md
+          message: 'Update README.md'
+          skip-empty: true
