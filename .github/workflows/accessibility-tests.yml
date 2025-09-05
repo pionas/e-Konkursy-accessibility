@@ -36,3 +36,5 @@ jobs:
           path: |
             cypress/reports/a11y
             reports/lighthouse
+            wyniki
+            README.md
