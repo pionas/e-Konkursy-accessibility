@@ -30,4 +30,3 @@ jobs:
         with:
           name: e-Konkursy-accessibility
           path: cypress/reports/a11y
-		  
