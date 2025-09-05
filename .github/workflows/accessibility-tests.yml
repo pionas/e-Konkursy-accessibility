@@ -37,4 +37,9 @@ jobs:
             cypress/reports/a11y
             reports/lighthouse
             wyniki
-            README.md
+
+      - uses: EndBug/add-and-commit@v9
+        if: always()
+        with:
+          add: './README.md'
+          message: 'Update README.md'

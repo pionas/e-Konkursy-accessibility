@@ -1,6 +1,7 @@
 # 🧪 Testy dostępności e-konkursy.info
 
-Projekt do automatycznego testowania dostępności strony [e-konkursy.info](https://www.e-konkursy.info/) z wykorzystaniem **Cypress**, **axe-core** i **Lighthouse**.
+Projekt do automatycznego testowania dostępności strony [e-konkursy.info](https://www.e-konkursy.info/) z wykorzystaniem
+**Cypress**, **axe-core** i **Lighthouse**.
 
 ---
 
@@ -41,13 +42,13 @@ import 'cypress-axe';
 
 ```javascript
 describe('Test dostępności strony e-konkursy.info', () => {
-  it('Powinien być wolny od poważnych błędów a11y', () => {
-    cy.visit('https://www.e-konkursy.info/');
-    cy.injectAxe();
-    cy.checkA11y(null, {
-      includedImpacts: ['critical', 'serious']
+    it('Powinien być wolny od poważnych błędów a11y', () => {
+        cy.visit('https://www.e-konkursy.info/');
+        cy.injectAxe();
+        cy.checkA11y(null, {
+            includedImpacts: ['critical', 'serious']
+        });
     });
-  });
 });
 ```
 
@@ -73,7 +74,8 @@ npm run test:all
 npm run test:lighthouse
 ```
 
-> Po uruchomieniu Lighthouse w katalogu `wyniki/` zostaną zapisane raporty HTML i JSON, a w README.md zostanie zaktualizowana tabela wyników.
+> Po uruchomieniu Lighthouse w katalogu `wyniki/` zostaną zapisane raporty HTML i JSON, a w README.md zostanie
+> zaktualizowana tabela wyników.
 
 ---
 
@@ -81,16 +83,17 @@ npm run test:lighthouse
 
 ```json
 "scripts": {
-  "test:chrome": "npm run test:chrome:desktop && npm run test:chrome:tablet && npm run test:chrome:mobile",
-  "test:firefox": "npm run test:firefox:desktop && npm run test:firefox:tablet && npm run test:firefox:mobile",
-  "test:edge": "npm run test:edge:desktop && npm run test:edge:tablet && npm run test:edge:mobile",
-  "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge && npm run test:lighthouse",
-  "test:open": "cypress open",
-  "test:lighthouse": "node run-lighthouse.js"
+"test:chrome": "npm run test:chrome:desktop && npm run test:chrome:tablet && npm run test:chrome:mobile",
+"test:firefox": "npm run test:firefox:desktop && npm run test:firefox:tablet && npm run test:firefox:mobile",
+"test:edge": "npm run test:edge:desktop && npm run test:edge:tablet && npm run test:edge:mobile",
+"test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge && npm run test:lighthouse",
+"test:open": "cypress open",
+"test:lighthouse": "node run-lighthouse.js"
 }
 ```
 
-* Testy Cypress w trybie headless uruchamiają się w **trzech przeglądarkach** i **trzech rozdzielczościach** (desktop, tablet, mobile).
+* Testy Cypress w trybie headless uruchamiają się w **trzech przeglądarkach** i **trzech rozdzielczościach** (desktop,
+  tablet, mobile).
 * `run-lighthouse.js` generuje raporty Lighthouse i automatycznie aktualizuje tabelę wyników w README.md.
 
 ---
@@ -107,7 +110,7 @@ npm run test:lighthouse
 <!-- LIGHTHOUSE TABLE START -->
 
 | URL                                                                                | Accessibility | Performance |
-| ---------------------------------------------------------------------------------- | ------------- | ----------- |
+|------------------------------------------------------------------------------------|---------------|-------------|
 | [https://www.e-konkursy.info/](https://www.e-konkursy.info/)                       | 95            | 88          |
 | [https://www.e-konkursy.info/aktualnosci](https://www.e-konkursy.info/aktualnosci) | 92            | 85          |
 
@@ -128,41 +131,8 @@ npm run test:lighthouse
 
 ## ⚙️ GitHub Actions (CI)
 
-Plik `.github/workflows/accessibility-tests.yml` uruchamia testy na push/pull request na branchach `main` i `develop`. Raporty są przesyłane jako artefakty (`wyniki/`), w tym CSV i HTML.
-
-```yaml
-name: Accessibility Tests
-
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
-
-jobs:
-  a11y-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '24'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run accessibility tests
-        run: npm run test:all
-
-      - name: Upload accessibility report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: e-Konkursy-accessibility
-          path: wyniki
-```
+Plik `.github/workflows/accessibility-tests.yml` uruchamia testy na push/pull request na branchach `main` i `develop`.
+Raporty są przesyłane jako artefakty (`wyniki/`), w tym CSV i HTML.
 
 ---
 
