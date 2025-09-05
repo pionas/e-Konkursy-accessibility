@@ -1,0 +1,33 @@
+name: Accessibility Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  a11y-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run accessibility tests
+        run: npm run test:all
+        
+      - name: Upload accessibility report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: accessibility-report
+          path: cypress/reports/a11y
+		  
