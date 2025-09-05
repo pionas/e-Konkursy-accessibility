@@ -1,16 +1,38 @@
 {
   "name": "ekonkursy-accessibility",
   "version": "1.0.0",
+  "description": "Testy dostępności strony e-konkursy.info z wykorzystaniem Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:a11y": "cypress run --spec 'cypress/e2e/**/*.cy.js' --browser chrome"
+    "test:chrome": "npm run test:chrome:desktop && npm run test:chrome:tablet && npm run test:chrome:mobile",
+    "test:firefox": "npm run test:firefox:desktop && npm run test:firefox:tablet && npm run test:firefox:mobile",
+    "test:edge": "npm run test:edge:desktop && npm run test:edge:tablet && npm run test:edge:mobile",
+    "test:chrome:desktop": "cypress run --browser chrome --config viewportWidth=1920,viewportHeight=1080",
+    "test:chrome:tablet": "cypress run --browser chrome --config viewportWidth=768,viewportHeight=1024",
+    "test:chrome:mobile": "cypress run --browser chrome --config viewportWidth=375,viewportHeight=667",
+    "test:firefox:desktop": "cypress run --browser firefox --config viewportWidth=1920,viewportHeight=1080",
+    "test:firefox:tablet": "cypress run --browser firefox --config viewportWidth=768,viewportHeight=1024",
+    "test:firefox:mobile": "cypress run --browser firefox --config viewportWidth=375,viewportHeight=667",
+    "test:edge:desktop": "cypress run --browser edge --config viewportWidth=1920,viewportHeight=1080",
+    "test:edge:tablet": "cypress run --browser edge --config viewportWidth=768,viewportHeight=1024",
+    "test:edge:mobile": "cypress run --browser edge --config viewportWidth=375,viewportHeight=667",
+    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge",
+    "test:open": "cypress open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "cypress",
+    "a11y",
+    "accessibility",
+    "wcag",
+    "testing",
+    "konkursy",
+    "e-konkursy"
+  ],
+  "author": "Adrian Pionka <adrian@pionka.com>",
+  "license": "MIT",
   "devDependencies": {
-    "cypress": "^15.1.0"
+    "axe-core": "^4.10.3",
+    "cypress": "^15.1.0",
+    "cypress-axe": "^1.7.0"
   }
 }
