@@ -169,5 +169,4 @@ jobs:
 ## 📝 Uwagi
 
 * `urls.txt` – lista stron do audytu Lighthouse (po jednej URL w linii).
-* `run-lighthouse.js` zapisuje pliki do `wyniki/` oraz aktualizuje tabelę w README.md.
-* CSV wyników znajduje się w `wyniki/wyniki.csv`.
+* `run-lighthouse.js` aktualizuje tabelę w README.md.

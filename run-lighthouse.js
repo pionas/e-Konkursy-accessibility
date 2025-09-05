@@ -1,13 +1,11 @@
 const lighthouse = require('lighthouse').default;
 const chromeLauncher = require('chrome-launcher');
 const fs = require('fs');
-const path = require('path');
 const config = require('./lighthouse-config');
 
 const URLS_FILE = 'urls.txt';
 const README_FILE = 'README.md';
 const OUTPUT_DIR = 'wyniki';
-const CSV_FILE = path.join(OUTPUT_DIR, 'wyniki.csv');
 const TABLE_START = '<!-- LIGHTHOUSE TABLE START -->';
 const TABLE_END = '<!-- LIGHTHOUSE TABLE END -->';
 
@@ -31,9 +29,6 @@ const urls = fs.readFileSync(URLS_FILE, 'utf-8')
     .map(line => line.trim())
     .filter(line => line.length > 0);
 
-// CSV nagłówek
-fs.writeFileSync(CSV_FILE, 'URL,Accessibility,Performance\n');
-
 async function runLighthouse(url) {
     const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
     const options = {port: chrome.port, logLevel: 'info'};
@@ -41,21 +36,7 @@ async function runLighthouse(url) {
     const categories = runnerResult.lhr.categories;
     const accessibility = Math.round(categories.accessibility.score * 100);
     const performance = Math.round(categories.performance.score * 100);
-
-    // nazwa pliku
-    const filename = sanitizeFilename(url);
-
-    // zapis raportów
-    // HTML
-    fs.writeFileSync(path.join(OUTPUT_DIR, `${filename}.html`), runnerResult.report[0]);
-    // JSON
-    fs.writeFileSync(path.join(OUTPUT_DIR, `${filename}.json`), runnerResult.report[1]);
-
-    // dopisz do CSV
-    fs.appendFileSync(CSV_FILE, `${url},${accessibility},${performance}\n`);
-
     await chrome.kill();
-
     return {url, accessibility, performance};
 }
 
