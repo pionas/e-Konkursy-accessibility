@@ -114,15 +114,16 @@ npm run test:lighthouse
 | https://www.e-konkursy.info/rejestracja | 95 | 100 |
 | https://www.e-konkursy.info/kontakt | 95 | 100 |
 | https://www.e-konkursy.info/konkursy | 96 | 100 |
-| https://www.e-konkursy.info/konkursy/konkursy-aktualne | 91 | 97 |
+| https://www.e-konkursy.info/konkursy/konkursy-aktualne | 91 | 93 |
 | https://www.e-konkursy.info/konkursy-dzisiaj-dodane | 100 | 100 |
-| https://www.e-konkursy.info/forum/inne/zbieramy-kase | 96 | 99 |
-| https://www.e-konkursy.info/forum | 91 | 100 |
+| https://www.e-konkursy.info/forum/inne/zbieramy-kase | 96 | 100 |
+| https://www.e-konkursy.info/forum | 91 | 98 |
 | https://www.e-konkursy.info/uzytkownicy/pionas | 92 | 100 |
-| https://www.e-konkursy.info/mapa-strony | 96 | 99 |
+| https://www.e-konkursy.info/mapa-strony | 96 | 100 |
 | https://www.e-konkursy.info/statystyki | 100 | 100 |
-| https://www.e-konkursy.info/aktualnosci | 96 | 91 |
+| https://www.e-konkursy.info/aktualnosci | 96 | 98 |
 <!-- LIGHTHOUSE TABLE END -->
+
 
 
 
