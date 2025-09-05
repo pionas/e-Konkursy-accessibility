@@ -1,6 +1,7 @@
 const lighthouse = require('lighthouse').default;
 const chromeLauncher = require('chrome-launcher');
 const fs = require('fs');
+const path = require('path');
 const config = require('./lighthouse-config');
 
 const URLS_FILE = 'urls.txt';
@@ -36,7 +37,18 @@ async function runLighthouse(url) {
     const categories = runnerResult.lhr.categories;
     const accessibility = Math.round(categories.accessibility.score * 100);
     const performance = Math.round(categories.performance.score * 100);
+
+    // nazwa pliku
+    const filename = sanitizeFilename(url);
+
+    // zapis raportów
+    // HTML
+    fs.writeFileSync(path.join(OUTPUT_DIR, `${filename}.html`), runnerResult.report[0]);
+    // JSON
+    fs.writeFileSync(path.join(OUTPUT_DIR, `${filename}.json`), runnerResult.report[1]);
+
     await chrome.kill();
+
     return {url, accessibility, performance};
 }
 
