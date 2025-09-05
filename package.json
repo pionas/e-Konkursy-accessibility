@@ -1,0 +1,16 @@
+{
+  "name": "ekonkursy-accessibility",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:a11y": "cypress run --spec 'cypress/e2e/**/*.cy.js' --browser chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^15.1.0"
+  }
+}
