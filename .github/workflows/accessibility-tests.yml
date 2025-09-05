@@ -25,6 +25,7 @@ jobs:
         run: npm run test:all
 
       - name: Audit URLs using Lighthouse
+        if: always()
         run: npm run test:lighthouse
 
       - name: Upload accessibility report
