@@ -70,7 +70,7 @@ async function runLighthouse(url) {
     results.forEach(r => {
         mdTable += `| ${r.url} | ${r.accessibility} | ${r.performance} |\n`;
     });
-    mdTable += `${TABLE_END}\n`;
+    mdTable += `${TABLE_END}`;
 
     // aktualizacja README.md
     let readme = '';
