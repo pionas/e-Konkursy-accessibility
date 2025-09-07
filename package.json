@@ -18,7 +18,7 @@
     "test:edge:mobile": "cypress run --browser edge --config viewportWidth=375,viewportHeight=667",
     "test:all": "npm run test:chrome && npm run test:firefox && npm run test:edge && npm run test:lighthouse",
     "test:open": "cypress open",
-    "test:lighthouse": "node run-lighthouse.js"
+    "test:lighthouse": "node lighthouse/run-lighthouse.js"
   },
   "keywords": [
     "cypress",
