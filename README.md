@@ -124,18 +124,12 @@ npm run test:lighthouse
 | https://www.e-konkursy.info/aktualnosci | 96 | 84 |
 <!-- LIGHTHOUSE TABLE END -->
 
-
-
-
-
-
-
-
-
-
-
-
 > Tabela jest automatycznie aktualizowana przy każdym uruchomieniu `npm run test:lighthouse`.
+
+### Cypress / axe-core – Detale błędów
+
+<!-- A11Y TABLE START -->
+<!-- A11Y TABLE END -->
 
 ---
 
@@ -158,4 +152,4 @@ Raporty są przesyłane jako artefakty (`wyniki/`), w tym CSV i HTML.
 ## 📝 Uwagi
 
 * `urls.txt` – lista stron do audytu Lighthouse (po jednej URL w linii).
-* `run-lighthouse.js` aktualizuje tabelę w README.md.
+* `run-lighthouse.js` aktualizuje tabelę Lighthouse w README.md.
