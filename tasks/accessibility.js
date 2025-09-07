@@ -15,7 +15,7 @@ function registerAccessibilityTasks(on) {
     on("task", {
         appendAccessibilityJson(violations) {
             const dir = path.dirname(ACCESSIBILITY_JSON_FILE);
-            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
 
             const existing = fs.existsSync(ACCESSIBILITY_JSON_FILE)
                 ? safeReadJson(ACCESSIBILITY_JSON_FILE)
@@ -35,4 +35,4 @@ function registerAccessibilityTasks(on) {
     });
 }
 
-module.exports = { registerAccessibilityTasks };
+module.exports = {registerAccessibilityTasks};

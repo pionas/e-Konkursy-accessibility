@@ -43,4 +43,4 @@ function registerReadmeTasks(on) {
     });
 }
 
-module.exports = { registerReadmeTasks };
+module.exports = {registerReadmeTasks};

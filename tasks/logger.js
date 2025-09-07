@@ -11,4 +11,4 @@ function registerLoggerTasks(on) {
     });
 }
 
-module.exports = { registerLoggerTasks };
+module.exports = {registerLoggerTasks};

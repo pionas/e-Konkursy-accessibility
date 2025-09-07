@@ -1,6 +1,6 @@
 export function saveViolations(violations) {
     cy.location("href").then((href) => {
-        const violationData = violations.map(({ id, impact, description, help, nodes }) => ({
+        const violationData = violations.map(({id, impact, description, help, nodes}) => ({
             url: href,
             id,
             impact,

@@ -16,4 +16,4 @@ function initBasicUrls(config) {
         .filter(Boolean);
 }
 
-module.exports = { initBasicUrls };
+module.exports = {initBasicUrls};
