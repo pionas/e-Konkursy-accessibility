@@ -1,6 +1,8 @@
 describe('Keyboard Navigation', () => {
+    beforeEach(() => {
+        cy.visit('/')
+    });
     it('Should allow keyboard navigation through buttons', () => {
-        cy.visit('/app')
 
         // Znajdź pierwszy przycisk
         cy.get('button').first().focus()
@@ -19,18 +21,13 @@ describe('Keyboard Navigation', () => {
     })
 
     it('Modal dialogs should trap focus', () => {
-        cy.visit('/modal-example')
-
-        // Otwórz modal
-        cy.get('#open-modal').click()
-
-        // Sprawdź czy modal ma fokus
-        cy.get('[role="dialog"]').should('have.focus')
+        cy.get('#rodoNotify').should('be.visible');
+        cy.get('#rodoNotify button.setRodo').should('have.focus');
 
         // Spróbuj wyjść z modala Tab'em
-        cy.get('[role="dialog"]').find('button').last().tab()
+        cy.get('#rodoNotify').find('button').last().tab()
 
         // Fokus powinien wrócić do pierwszego elementu modala
-        cy.get('[role="dialog"]').find('button').first().should('have.focus')
+        cy.get('#rodoNotify').find('button').first().should('have.focus')
     })
 })

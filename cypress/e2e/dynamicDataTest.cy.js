@@ -1,7 +1,9 @@
 describe('ARIA and Dynamic Content', () => {
-    it('Live regions should announce updates', () => {
-        cy.visit('/dashboard')
+    beforeEach(() => {
+        cy.visit('/')
+    });
 
+    it('Live regions should announce updates', () => {
         // Kliknij przycisk, który aktualizuje status
         cy.get('#refresh-status').click()
 

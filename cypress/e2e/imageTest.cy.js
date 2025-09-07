@@ -1,7 +1,8 @@
 describe('Image Accessibility', () => {
+    beforeEach(() => {
+        cy.visit('/')
+    });
     it('All images should have alt attributes', () => {
-        cy.visit('/gallery')
-
         cy.get('img').each(($img) => {
             cy.wrap($img).should('have.attr', 'alt')
 

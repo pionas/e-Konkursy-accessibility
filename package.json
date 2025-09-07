@@ -36,6 +36,7 @@
     "chrome-launcher": "^1.2.0",
     "cypress": "^15.1.0",
     "cypress-axe": "^1.7.0",
+    "cypress-plugin-tab": "^1.0.5",
     "lighthouse": "^12.8.2"
   }
 }
